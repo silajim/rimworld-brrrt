@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	  <Operation Class="PatchOperationFindMod">
+    <mods>
+        <li>Combat Extended</li>
+    </mods>
+	<match Class="PatchOperationSequence">
+<!-- dropdown create -->
+
+<operations>
+	<li Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName = "BrrtTurretFlam"]/researchPrerequisites</xpath>
+		<value>
+			<researchPrerequisites>
+				<li>CE_HeavyTurret</li>
+			</researchPrerequisites>
+			</value>
+			</li>
+			
+	<li Class="PatchOperationRemove">
+		<xpath>Defs/ThingDef[defName = "BrrtTurretFlam"]/comps/li[@Class = "CompProperties_Refuelable"]</xpath>
+		</li>
+		
+	<li Class="PatchOperationRemove">
+		<xpath>Defs/ThingDef[defName = "BrrtTurretFlam"]/comps/li[@Class = "CompProperties_Explosive"]</xpath>
+		</li>	
+		
+	<li Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName = "BrrtTurretFlam"]/thingClass</xpath>
+		<value>
+			<thingClass>CombatExtended.Building_TurretGunCE</thingClass>
+		</value>
+		</li>	
+
+			<li Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName = "BrrtTurretFlam"]/fillPercent</xpath>
+		<value>
+			<fillPercent>0.85</fillPercent>
+		</value>
+		</li>	
+
+	<li Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName = "BrrtTurretFlam"]/statBases</xpath>
+		<value>
+			<AimingAccuracy>0.5</AimingAccuracy>
+		</value>
+		</li>	
+
+	<li Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName = "BrrtGunFlam"]</xpath>
+		<value>
+			<ThingDef ParentName="BaseAutoTurretGun">
+    <defName>BrrtGunFlam</defName>
+    <label>GAU-8 Avenger (incendiary)</label>
+    <description>An ultra-heavy autocannon gun to be mounted on a turret, effective against tanks and anything else.</description>
+    <graphicData>
+      <texPath>BrrtF_Top</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	</graphicData>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <destroyOnDrop>true</destroyOnDrop>
+    <tradeability>None</tradeability>
+    <useHitPoints>false</useHitPoints>
+    <statBases>
+	<MarketValue>10000</MarketValue>
+<SightsEfficiency>2.5</SightsEfficiency>
+      <ShotSpread>0.01</ShotSpread>
+      <SwayFactor>0.5</SwayFactor>
+      <RangedWeapon_Cooldown>0.56</RangedWeapon_Cooldown>
+	  <NightVisionEfficiency_Weapon>0.5</NightVisionEfficiency_Weapon>
+    </statBases>
+    <verbs>
+      <li Class="CombatExtended.VerbPropertiesCE">
+        <recoilAmount>0.5</recoilAmount>
+        <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_30x173mmNATO_Incendiary</defaultProjectile>
+        <warmupTime>1.3</warmupTime>
+        <range>80</range>
+        <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+        <burstShotCount>100</burstShotCount>
+        <soundCast>gau-8</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>20</muzzleFlashScale>
+		<recoilPattern>Mounted</recoilPattern>
+      </li>
+    </verbs>
+<comps>
+      <li Class="CombatExtended.CompProperties_AmmoUser">
+        <magazineSize>1150</magazineSize>
+        <reloadTime>9.8</reloadTime>
+        <ammoSet>AmmoSet_30x173mmNATO</ammoSet>
+      </li>
+      <li Class="CombatExtended.CompProperties_FireModes">
+	  <aimedBurstShotCount>50</aimedBurstShotCount>
+        <aiAimMode>AimedShot</aiAimMode>
+        <!-- <noSnapshot>true</noSnapshot> -->
+        <noSingleShot>true</noSingleShot>
+      </li>
+    </comps>	
+  </ThingDef>
+		</value>
+		</li>	
+		
+		
+		
+</operations>
+</match>
+</Operation>
+
+</Patch>

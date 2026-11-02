@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	  <Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Gunplay</li>
+    </mods>
+	<match Class="PatchOperationSequence">
+	<operations>
+	<li Class="PatchOperationAdd">
+    <xpath>/Defs</xpath>
+	<value>
+	<Gunplay.GunPropDef>
+        <defName>BrrtGun</defName>
+
+        <!-- <spinner> -->
+            <!-- <frames> -->
+                <!-- <li><texPath>Brrt_Top-0</texPath><graphicClass>Graphic_Single</graphicClass></li> -->
+                <!-- <li><texPath>Brrt_Top-1</texPath><graphicClass>Graphic_Single</graphicClass></li> -->
+                <!-- <li><texPath>Brrt_Top-2</texPath><graphicClass>Graphic_Single</graphicClass></li> -->
+                <!-- <li><texPath>Brrt_Top-3</texPath><graphicClass>Graphic_Single</graphicClass></li> -->
+                <!-- <li><texPath>Brrt_Top-4</texPath><graphicClass>Graphic_Single</graphicClass></li> -->
+				<!-- <li><texPath>Brrt_Top-5</texPath><graphicClass>Graphic_Single</graphicClass></li> -->
+				<!-- <li><texPath>Brrt_Top-6</texPath><graphicClass>Graphic_Single</graphicClass></li> -->
+				<!-- <li><texPath>Brrt_Top-7</texPath><graphicClass>Graphic_Single</graphicClass></li> -->
+				<!-- <li><texPath>Brrt_Top-8</texPath><graphicClass>Graphic_Single</graphicClass></li> -->
+				<!-- <li><texPath>Brrt_Top-9</texPath><graphicClass>Graphic_Single</graphicClass></li> -->
+				<!-- <li><texPath>Brrt_Top-10</texPath><graphicClass>Graphic_Single</graphicClass></li> -->
+            <!-- </frames> -->
+
+            <!-- <rotationSpeed>3</rotationSpeed> -->
+        <!-- </spinner> -->
+		<barrelLength>5</barrelLength>
+
+        <!-- <drawScale>1.1</drawScale> -->
+
+        <soundAiming>GunplayMinigunSpinup</soundAiming>
+    </Gunplay.GunPropDef>
+</value>
+	</li>
+</operations>
+</match>
+</Operation>
+
+</Patch>
+

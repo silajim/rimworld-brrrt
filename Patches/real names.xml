@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	  <Operation Class="PatchOperationFindMod">
+    <mods>
+        <li>[1.0 - 1.4] Real Vanilla Gun Names</li>
+		<li>Real Vanilla Gun Names</li>
+		<li>Real Gun Names</li>
+		<li>Real Names Infinite</li>
+    </mods>
+	<match Class="PatchOperationSequence">
+<!-- dropdown create -->
+
+<operations>
+	<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName = "BrrtTurretFlam"]/label</xpath>
+			<value>
+					  <label>GAU-8 Avenger incendiary turret</label>
+			</value>
+	  </li>
+	  
+	  	<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName = "BrrtGunFlam"]/label</xpath>
+			<value>
+					  <label>GAU-8 Avenger (incendiary)</label>
+			</value>
+	  </li>
+	  
+<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName = "BrrtTurretFlam"]/description</xpath>
+			<value>
+					  <description>The GAU-8 Avenger is a famously enormous, powerful 30mm anti-tank Gatling autocannon. This one has somehow been mounted as a turret.</description>
+			</value>
+	  </li>	  
+
+	<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName = "BrrtBulletFlam"]/label</xpath>
+			<value>
+					  <label>30x173mm HEI-AP round</label>
+			</value>
+	  </li>
+
+	<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName = "BrrtTurret"]/label</xpath>
+			<value>
+					  <label>GAU-8 Avenger turret</label>
+			</value>
+	  </li>
+	  
+	  	<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName = "BrrtGun"]/label</xpath>
+			<value>
+					  <label>GAU-8 Avenger</label>
+			</value>
+	  </li>
+	  
+<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName = "BrrtTurret"]/description</xpath>
+			<value>
+					  <description>The GAU-8 Avenger is a famously enormous, powerful 30mm anti-tank Gatling autocannon. This one has somehow been mounted as a turret.</description>
+			</value>
+	  </li>	  
+
+	<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName = "BrrtBullet"]/label</xpath>
+			<value>
+					  <label>30x173mm anti-tank round</label>
+			</value>
+	  </li>
+	
+</operations>
+</match>
+</Operation>
+
+</Patch>

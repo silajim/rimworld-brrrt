@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	  <Operation Class="PatchOperationFindMod">
+    <mods>
+        <li>Expanded Materials Add-on - Ammunition Module</li>
+    </mods>
+	<match Class="PatchOperationSequence">
+<!-- dropdown create -->
+
+<operations>
+	<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName = "BrrtTurret"]/comps/li/fuelFilter</xpath>
+		<value>
+			<fuelFilter><thingDefs><li>VMEu_SniperAmmo</li></thingDefs></fuelFilter>
+		</value>
+	  </li>
+</operations>
+</match>
+</Operation>
+
+</Patch>

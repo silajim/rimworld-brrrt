@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>BrrtTurret</defName>
+    <label>ultra-heavy autocannon turret</label>
+    <description>An automatic, ultra-heavy autocannon turret originally designed as an anti-tank weapon. May explode when damaged.</description>
+    <thingClass>Building_TurretGun</thingClass>
+    <graphicData>
+      <texPath>Brrt_Base</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(5.3,5.3)</drawSize>
+      <damageData>
+        <rect>(0.2,0.2,0.6,0.6)</rect>
+      </damageData>
+      <shadowData>
+        <volume>(0.27,0.25,0.27)</volume>
+        <offset>(0,0,0)</offset>
+      </shadowData>
+    </graphicData>
+    <size>(5,5)</size>
+    <techLevel>Spacer</techLevel>
+    <uiIconPath>Brrt_icon</uiIconPath>
+    <uiIconScale>1.2</uiIconScale>
+    <altitudeLayer>Building</altitudeLayer>
+    <stealable>false</stealable>
+    <rotatable>false</rotatable>
+    <statBases>
+      <MaxHitPoints>6000</MaxHitPoints>
+      <Flammability>0.1</Flammability>
+      <WorkToBuild>65000</WorkToBuild>
+      <Mass>1500</Mass>
+      <Beauty>-1</Beauty>
+      <ShootingAccuracyTurret>0.995</ShootingAccuracyTurret>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <comps>
+      <li Class="CompProperties_Explosive">
+        <explosiveRadius>3.9</explosiveRadius>
+        <explosiveDamageType>Bomb</explosiveDamageType>
+        <chanceNeverExplodeFromDamage>0.5</chanceNeverExplodeFromDamage>
+      </li>
+      <li Class="CompProperties_Forbiddable"/>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>3000</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Breakdownable"/>
+      <li Class="CompProperties_Refuelable">
+    <fuelLabel>Shots until barrel change</fuelLabel>
+        <fuelGizmoLabel>Barrel durability</fuelGizmoLabel>
+        <outOfFuelMessage>Cannot shoot: Needs new barrel</outOfFuelMessage>
+        <fuelFilter><thingDefs><li>Steel</li></thingDefs></fuelFilter>
+        <fuelCapacity>1150</fuelCapacity>
+        <fuelMultiplier>1</fuelMultiplier>
+        <initialFuelPercent>1</initialFuelPercent>
+        <autoRefuelPercent>0.5</autoRefuelPercent>
+        <showFuelGizmo>true</showFuelGizmo>
+        <minimumFueledThreshold>1</minimumFueledThreshold>
+        <factorByDifficulty>true</factorByDifficulty>
+        <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+        <fuelIconPath>UI/Overlays/Barrel</fuelIconPath>
+      </li>
+    </comps>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.5</fillPercent>
+    <hasTooltip>true</hasTooltip>
+	<costStuffCount>200</costStuffCount>
+	<stuffCategories><li>Metallic</li></stuffCategories>
+    <costList>
+      <Steel>2500</Steel>
+      <ComponentIndustrial>10</ComponentIndustrial>
+      <ComponentSpacer>10</ComponentSpacer>
+    </costList>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <designationCategory>Security</designationCategory>
+    <specialDisplayRadius>55</specialDisplayRadius>
+    <canOverlapZones>true</canOverlapZones>
+    <building>
+      <ai_combatDangerous>true</ai_combatDangerous>
+      <turretGunDef>BrrtGun</turretGunDef>
+      <turretBurstCooldownTime>0.01</turretBurstCooldownTime>
+      <turretTopDrawSize>9</turretTopDrawSize>
+      <turretTopOffset>(0, 0)</turretTopOffset>
+    </building>
+    <placeWorkers>
+      <li>PlaceWorker_TurretTop</li>
+    </placeWorkers>
+    <constructionSkillPrerequisite>15</constructionSkillPrerequisite>
+	<researchPrerequisites>
+	<li>GunTurrets</li>
+      <li>MultibarrelWeapons</li>
+    </researchPrerequisites>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseWeaponTurret">
+    <defName>BrrtGun</defName>
+    <label>ultra-heavy autocannon gun</label>
+    <description>An ultra-heavy autocannon gun to be mounted on a turret.</description>
+    <graphicData>
+      <texPath>Brrt_Top</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	</graphicData>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <destroyOnDrop>true</destroyOnDrop>
+    <tradeability>None</tradeability>
+    <useHitPoints>false</useHitPoints>
+    <statBases>
+      <AccuracyTouch>0.70</AccuracyTouch>
+      <AccuracyShort>0.75</AccuracyShort>
+      <AccuracyMedium>0.70</AccuracyMedium>
+      <AccuracyLong>0.60</AccuracyLong>
+      <RangedWeapon_Cooldown>.5</RangedWeapon_Cooldown>
+      <DeteriorationRate>0</DeteriorationRate>
+      <Mass>15</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <weaponTags Inherit="false">
+      <li>TurretGun</li>
+    </weaponTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>BrrtBullet</defaultProjectile>
+        <range>50</range>
+        <ticksBetweenBurstShots>0.5</ticksBetweenBurstShots>
+        <burstShotCount>50</burstShotCount>
+        <soundCast>gau-8</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>10</muzzleFlashScale>
+        <consumeFuelPerShot>1</consumeFuelPerShot>
+      </li>
+    </verbs>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>BrrtBullet</defName>
+    <label>ultra-heavy autocannon bullets</label>
+    <graphicData>
+      <texPath>Bullet_DU_blur</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>2</drawSize>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>30</damageAmountBase>
+      <stoppingPower>100</stoppingPower>
+      <speed>100</speed>
+    </projectile>
+  </ThingDef>
+
+    <SoundDef>
+    <defName>gau-8</defName>  
+    <context>MapOnly</context>  
+	 <maxVoices>4</maxVoices>   
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>gau-8</clipPath>
+          </li>
+        </grains>      
+		<sustainLoop>false</sustainLoop>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+</Defs>

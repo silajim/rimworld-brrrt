@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	  <Operation Class="PatchOperationFindMod">
+    <mods>
+        <li>Simple Ammunition Remastered</li>
+    </mods>
+	<match Class="PatchOperationSequence">
+<!-- dropdown create -->
+
+<operations>
+	<li Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="BrrtTurret"]/comps/li[@Class="CompProperties_Refuelable"]/fuelFilter/thingDefs</xpath>
+    <value>
+      <thingDefs>
+	    <li>FF_Ammunition_Industrial</li>
+	  </thingDefs>
+    </value>
+			</li>
+			
+	<li Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="BrrtTurretFlam"]/comps/li[@Class="CompProperties_Refuelable"]/fuelFilter/thingDefs</xpath>
+    <value>
+      <thingDefs>
+	    <li>FF_Ammunition_Industrial</li>
+	  </thingDefs>
+    </value>
+			</li>			
+			
+</operations>
+</match>
+</Operation>
+
+</Patch>

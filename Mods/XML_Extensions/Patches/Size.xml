@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+<Operation Class="XmlExtensions.UseSetting">
+    <modId>HolBrrt</modId>
+    <key>BrrtSize</key>
+    <defaultValue>5</defaultValue>
+    <apply>
+		<Operation Class="XmlExtensions.IfStatement">
+			<condition Class="XmlExtensions.Boolean.Comparison">
+				<value1>{BrrtSize}</value1>
+				<value2>3</value2>
+				<relation>eq</relation>
+			</condition>
+			<caseTrue>
+				<Operation Class="PatchOperationSequence">
+					<operations>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/ThingDef[defName = "BrrtTurret"]/graphicData/drawSize</xpath>
+							<value>
+								<drawSize>(3.3,3.3)</drawSize>
+							</value>
+						</li>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/ThingDef[defName = "BrrtTurret"]/size</xpath>
+							<value>
+								<size>(3,3)</size>
+							</value>
+						</li>
+						
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/ThingDef[defName = "BrrtTurret"]/building/turretTopDrawSize</xpath>
+							<value>
+								<turretTopDrawSize>5</turretTopDrawSize>
+							</value>
+						</li>
+						
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/ThingDef[defName = "BrrtTurretFlam"]/graphicData/drawSize</xpath>
+							<value>
+								<drawSize>(3.3,3.3)</drawSize>
+							</value>
+						</li>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/ThingDef[defName = "BrrtTurretFlam"]/size</xpath>
+							<value>
+								<size>(3,3)</size>
+							</value>
+						</li>
+					<li Class="PatchOperationReplace">
+							<xpath>Defs/ThingDef[defName = "BrrtTurretFlam"]/building/turretTopDrawSize</xpath>
+							<value>
+								<turretTopDrawSize>5</turretTopDrawSize>
+							</value>
+						</li>
+						
+					</operations>
+				</Operation>
+			</caseTrue>
+		</Operation>
+		
+<Operation Class="XmlExtensions.IfStatement">
+			<condition Class="XmlExtensions.Boolean.Comparison">
+				<value1>{BrrtSize}</value1>
+				<value2>4</value2>
+				<relation>eq</relation>
+			</condition>
+			<caseTrue>
+				<Operation Class="PatchOperationSequence">
+					<operations>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/ThingDef[defName = "BrrtTurret"]/graphicData/drawSize</xpath>
+							<value>
+								<drawSize>(4.3,4.3)</drawSize>
+							</value>
+						</li>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/ThingDef[defName = "BrrtTurret"]/size</xpath>
+							<value>
+								<size>(4,4)</size>
+							</value>
+						</li>
+						
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/ThingDef[defName = "BrrtTurret"]/building/turretTopDrawSize</xpath>
+							<value>
+								<turretTopDrawSize>7</turretTopDrawSize>
+							</value>
+						</li>
+						
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/ThingDef[defName = "BrrtTurretFlam"]/graphicData/drawSize</xpath>
+							<value>
+								<drawSize>(4.3,4.3)</drawSize>
+							</value>
+						</li>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/ThingDef[defName = "BrrtTurretFlam"]/size</xpath>
+							<value>
+								<size>(4,4)</size>
+							</value>
+						</li>		
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/ThingDef[defName = "BrrtTurretFlam"]/building/turretTopDrawSize</xpath>
+							<value>
+								<turretTopDrawSize>7</turretTopDrawSize>
+							</value>
+						</li>
+						
+					</operations>
+				</Operation>
+			</caseTrue>
+		</Operation>		
+
+<Operation Class="XmlExtensions.IfStatement">
+			<condition Class="XmlExtensions.Boolean.Comparison">
+				<value1>{BrrtSize}</value1>
+				<value2>5</value2>
+				<relation>eq</relation>
+			</condition>
+			<caseTrue>
+				<Operation Class="PatchOperationSequence">
+					<operations>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/ThingDef[defName = "BrrtTurret"]/graphicData/drawSize</xpath>
+							<value>
+								<drawSize>(5.3,5.3)</drawSize>
+							</value>
+						</li>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/ThingDef[defName = "BrrtTurret"]/size</xpath>
+							<value>
+								<size>(5,5)</size>
+							</value>
+						</li>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/ThingDef[defName = "BrrtTurret"]/building/turretTopDrawSize</xpath>
+							<value>
+								<turretTopDrawSize>9</turretTopDrawSize>
+							</value>
+						</li>
+						
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/ThingDef[defName = "BrrtTurretFlam"]/graphicData/drawSize</xpath>
+							<value>
+								<drawSize>(5.3,5.3)</drawSize>
+							</value>
+						</li>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/ThingDef[defName = "BrrtTurretFlam"]/size</xpath>
+							<value>
+								<size>(5,5)</size>
+							</value>
+						</li>				
+					<li Class="PatchOperationReplace">
+							<xpath>Defs/ThingDef[defName = "BrrtTurretFlam"]/building/turretTopDrawSize</xpath>
+							<value>
+								<turretTopDrawSize>9</turretTopDrawSize>
+							</value>
+						</li>	
+						
+					</operations>
+				</Operation>
+			</caseTrue>
+		</Operation>		
+
+<Operation Class="XmlExtensions.IfStatement">
+			<condition Class="XmlExtensions.Boolean.Comparison">
+				<value1>{BrrtSize}</value1>
+				<value2>6</value2>
+				<relation>eq</relation>
+			</condition>
+			<caseTrue>
+				<Operation Class="PatchOperationSequence">
+					<operations>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/ThingDef[defName = "BrrtTurret"]/graphicData/drawSize</xpath>
+							<value>
+								<drawSize>(6.3,6.3)</drawSize>
+							</value>
+						</li>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/ThingDef[defName = "BrrtTurret"]/size</xpath>
+							<value>
+								<size>(6,6)</size>
+							</value>
+						</li>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/ThingDef[defName = "BrrtTurret"]/building/turretTopDrawSize</xpath>
+							<value>
+								<turretTopDrawSize>11</turretTopDrawSize>
+							</value>
+						</li>
+						
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/ThingDef[defName = "BrrtTurretFlam"]/graphicData/drawSize</xpath>
+							<value>
+								<drawSize>(6.3,6.3)</drawSize>
+							</value>
+						</li>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/ThingDef[defName = "BrrtTurretFlam"]/size</xpath>
+							<value>
+								<size>(6,6)</size>
+							</value>
+						</li>		
+<li Class="PatchOperationReplace">
+							<xpath>Defs/ThingDef[defName = "BrrtTurretFlam"]/building/turretTopDrawSize</xpath>
+							<value>
+								<turretTopDrawSize>11</turretTopDrawSize>
+							</value>
+						</li>
+						
+					</operations>
+				</Operation>
+			</caseTrue>
+		</Operation>		
+
+<Operation Class="XmlExtensions.IfStatement">
+			<condition Class="XmlExtensions.Boolean.Comparison">
+				<value1>{BrrtSize}</value1>
+				<value2>7</value2>
+				<relation>eq</relation>
+			</condition>
+			<caseTrue>
+				<Operation Class="PatchOperationSequence">
+					<operations>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/ThingDef[defName = "BrrtTurret"]/graphicData/drawSize</xpath>
+							<value>
+								<drawSize>(7.3,7.3)</drawSize>
+							</value>
+						</li>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/ThingDef[defName = "BrrtTurret"]/size</xpath>
+							<value>
+								<size>(7,7)</size>
+							</value>
+						</li>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/ThingDef[defName = "BrrtTurret"]/building/turretTopDrawSize</xpath>
+							<value>
+								<turretTopDrawSize>13</turretTopDrawSize>
+							</value>
+						</li>
+						
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/ThingDef[defName = "BrrtTurretFlam"]/graphicData/drawSize</xpath>
+							<value>
+								<drawSize>(7.3,7.3)</drawSize>
+							</value>
+						</li>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/ThingDef[defName = "BrrtTurretFlam"]/size</xpath>
+							<value>
+								<size>(7,7)</size>
+							</value>
+						</li>				
+					<li Class="PatchOperationReplace">
+							<xpath>Defs/ThingDef[defName = "BrrtTurretFlam"]/building/turretTopDrawSize</xpath>
+							<value>
+								<turretTopDrawSize>13</turretTopDrawSize>
+							</value>
+						</li>	
+						
+					</operations>
+				</Operation>
+			</caseTrue>
+		</Operation>		
+
+<Operation Class="XmlExtensions.IfStatement">
+			<condition Class="XmlExtensions.Boolean.Comparison">
+				<value1>{BrrtSize}</value1>
+				<value2>8</value2>
+				<relation>eq</relation>
+			</condition>
+			<caseTrue>
+				<Operation Class="PatchOperationSequence">
+					<operations>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/ThingDef[defName = "BrrtTurret"]/graphicData/drawSize</xpath>
+							<value>
+								<drawSize>(8.3,8.3)</drawSize>
+							</value>
+						</li>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/ThingDef[defName = "BrrtTurret"]/size</xpath>
+							<value>
+								<size>(8,8)</size>
+							</value>
+						</li>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/ThingDef[defName = "BrrtTurret"]/building/turretTopDrawSize</xpath>
+							<value>
+								<turretTopDrawSize>15</turretTopDrawSize>
+							</value>
+						</li>
+						
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/ThingDef[defName = "BrrtTurretFlam"]/graphicData/drawSize</xpath>
+							<value>
+								<drawSize>(8.3,8.3)</drawSize>
+							</value>
+						</li>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/ThingDef[defName = "BrrtTurretFlam"]/size</xpath>
+							<value>
+								<size>(8,8)</size>
+							</value>
+						</li>				
+				<li Class="PatchOperationReplace">
+							<xpath>Defs/ThingDef[defName = "BrrtTurretFlam"]/building/turretTopDrawSize</xpath>
+							<value>
+								<turretTopDrawSize>15</turretTopDrawSize>
+							</value>
+						</li>		
+					</operations>
+				</Operation>
+			</caseTrue>
+		</Operation>		
+
+<Operation Class="XmlExtensions.IfStatement">
+			<condition Class="XmlExtensions.Boolean.Comparison">
+				<value1>{BrrtSize}</value1>
+				<value2>9</value2>
+				<relation>eq</relation>
+			</condition>
+			<caseTrue>
+				<Operation Class="PatchOperationSequence">
+					<operations>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/ThingDef[defName = "BrrtTurret"]/graphicData/drawSize</xpath>
+							<value>
+								<drawSize>(9.3,9.3)</drawSize>
+							</value>
+						</li>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/ThingDef[defName = "BrrtTurret"]/size</xpath>
+							<value>
+								<size>(9,9)</size>
+							</value>
+						</li>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/ThingDef[defName = "BrrtTurret"]/building/turretTopDrawSize</xpath>
+							<value>
+								<turretTopDrawSize>17</turretTopDrawSize>
+							</value>
+						</li>
+						
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/ThingDef[defName = "BrrtTurretFlam"]/graphicData/drawSize</xpath>
+							<value>
+								<drawSize>(9.3,9.3)</drawSize>
+							</value>
+						</li>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/ThingDef[defName = "BrrtTurretFlam"]/size</xpath>
+							<value>
+								<size>(9,9)</size>
+							</value>
+						</li>		
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/ThingDef[defName = "BrrtTurretFlam"]/building/turretTopDrawSize</xpath>
+							<value>
+								<turretTopDrawSize>17</turretTopDrawSize>
+							</value>
+						</li>						
+						
+						
+					</operations>
+				</Operation>
+			</caseTrue>
+		</Operation>		
+		
+    </apply>
+</Operation>
+</Patch>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<XmlExtensions.SettingsMenuDef>
+		<defName>Brrt_Menu</defName>
+		<modId>HolBrrt</modId>
+		<label>Brrrt</label>
+		<settings>
+			<li Class="XmlExtensions.Setting.Text">
+				<text>Turret fuel</text>
+				<font>Medium</font>
+				<anchor>Middle</anchor>
+			</li>
+			
+			<li Class="XmlExtensions.Setting.Text">
+				<text>* For non-CE users only. This menu does nothing with CE enabled.</text>
+				<font>Small</font>
+				<anchor>Middle</anchor>
+			</li>
+			
+			<li Class="XmlExtensions.Setting.RadioButtons">
+				<key>BrrtRefuel</key>
+				<defaultValue>0</defaultValue>
+				<buttons>
+					<li>
+						<label>Steel</label>
+						<tKey>BrrrtRefuelSteel</tKey>
+						<value>0</value>
+					</li>
+					<li>
+						<label>Uranium</label>
+						<tKey>BrrrtRefuelUranium</tKey>
+						<value>1</value>
+					</li>
+					<li>
+						<label>Plasteel</label>
+						<tKey>BrrrtRefuelPlasteel</tKey>
+						<value>2</value>
+					</li>
+				</buttons>
+			</li>
+			
+			<li Class="XmlExtensions.Setting.Text" MayRequire="VanillaExpanded.VFEA">
+				<text>VFE Ancients: Brrt as point defense</text>
+				<font>Medium</font>
+				<anchor>Middle</anchor>
+			</li>
+
+			<li Class="XmlExtensions.Setting.Text" MayRequire="VanillaExpanded.VFEA">
+				<text>* For non-CE users only. This menu does nothing with CE enabled. Point-defense will be fixed in next CE patch. Change applies to newly-constructed turrets.</text>
+				<font>Small</font>
+				<anchor>Middle</anchor>
+			</li>			
+			
+			<li Class="XmlExtensions.Setting.RadioButtons" MayRequire="VanillaExpanded.VFEA">
+				<key>BrrtPD</key>
+				<defaultValue>0</defaultValue>
+				<buttons>
+					<li>
+						<label>Disabled</label>
+						<tKey>BrrtPDN</tKey>
+						<value>0</value>
+					</li>
+					<li>
+						<label>Enabled</label>
+						<tKey>BrrtPDY</tKey>
+						<value>1</value>
+					</li>
+				</buttons>
+			</li>			
+			
+				<li Class="XmlExtensions.Setting.Text">
+				<text>Turret size (Default 5x5)</text>
+				<font>Medium</font>
+				<anchor>Middle</anchor>
+			</li>
+			
+			<li Class="XmlExtensions.Setting.Text">
+				<text>* Changing this setting may deconstruct existing turrets.</text>
+				<font>Small</font>
+				<anchor>Middle</anchor>
+			</li>
+			
+				<li Class="XmlExtensions.Setting.Slider">
+	    <key>BrrtSize</key>
+	    <defaultValue>5</defaultValue>
+	    <label>{BrrtSize}x{BrrtSize}</label>
+	    <min>3</min>
+	    <max>9</max>
+		<decimals>0</decimals>
+	</li>
+<li Class="XmlExtensions.Setting.Numeric">
+    <key>BrrtPower</key>
+    <label>Power usage</label>
+    <defaultValue>3000</defaultValue>
+    <min>1000</min>
+    <max>10000</max>
+</li>	
+	
+			
+			<li Class="XmlExtensions.Setting.GapLine" />
+			<li Class="XmlExtensions.Setting.ResetSettings">
+				<label>Reset settings</label>
+				<tKey>Brrrt_ResetSettings</tKey>
+			</li>
+			<li Class="XmlExtensions.Setting.GapLine" />
+			<li Class="XmlExtensions.Setting.Text">
+				<text>Restart to apply changes.</text>
+				<tKey>BrrrtPleaseRestart</tKey>
+				<anchor>Middle</anchor>
+			</li>
+		</settings>
+	</XmlExtensions.SettingsMenuDef>
+</Defs>

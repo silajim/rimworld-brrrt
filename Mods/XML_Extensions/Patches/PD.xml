@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+<Operation Class="PatchOperationFindMod">
+    <mods>
+        <li>Combat Extended</li>
+    </mods>
+
+<nomatch Class="XmlExtensions.UseSetting" MayRequire="VanillaExpanded.VFEA">
+    <modId>HolBrrt</modId>
+    <key>BrrtPD</key>
+    <defaultValue>0</defaultValue>
+    <apply>
+	
+		<Operation Class="XmlExtensions.IfStatement">
+			<condition Class="XmlExtensions.Boolean.Comparison">
+				<value1>{BrrtPD}</value1>
+				<value2>0</value2>
+				<nonNumeric>true</nonNumeric>
+				<relation>eq</relation>
+			</condition>
+			<caseTrue>
+			</caseTrue>
+		</Operation>
+		<Operation Class="XmlExtensions.IfStatement">
+			<condition Class="XmlExtensions.Boolean.Comparison">
+				<value1>{BrrtPD}</value1>
+				<value2>1</value2>
+				<nonNumeric>true</nonNumeric>
+				<relation>eq</relation>
+			</condition>
+			<caseTrue>
+				<Operation Class="PatchOperationSequence">
+					<operations>
+						<li Class="PatchOperationReplace" MayRequire="VanillaExpanded.VFEA">
+								<xpath>/Defs/ThingDef[defName="BrrtTurret"]/thingClass</xpath>
+								<value>
+										<thingClass>VFEAncients.Building_TurretPD</thingClass>
+								</value>
+							</li>	
+							<li Class="PatchOperationReplace" MayRequire="VanillaExpanded.VFEA">
+								<xpath>/Defs/ThingDef[defName="BrrtTurretFlam"]/thingClass</xpath>
+								<value>
+										<thingClass>VFEAncients.Building_TurretPD</thingClass>
+								</value>
+							</li>				
+
+	<li Class="PatchOperationAdd" MayRequire="VanillaExpanded.VFEA">
+								<xpath>/Defs/ThingDef[defName="BrrtGun"]/verbs</xpath>
+								<value>
+										<li>
+											<verbClass>Verb_Shoot</verbClass>
+											<hasStandardCommand>false</hasStandardCommand>
+											<label>point-defense</label>
+											<defaultProjectile>BrrtBullet</defaultProjectile>
+											<warmupTime>0</warmupTime>
+											<range>50.9</range>
+											<burstShotCount>10</burstShotCount>
+											<ticksBetweenBurstShots>0</ticksBetweenBurstShots>
+											<soundCast>gau-8</soundCast>
+											<soundCastTail>GunTail_Medium</soundCastTail>
+											<muzzleFlashScale>11</muzzleFlashScale>
+											<consumeFuelPerShot>1</consumeFuelPerShot>
+											<defaultCooldownTime>0.2</defaultCooldownTime>
+											<isPrimary>false</isPrimary>
+										</li>						
+								</value>
+							</li>	
+							<li Class="PatchOperationAdd" MayRequire="VanillaExpanded.VFEA">
+								<xpath>/Defs/ThingDef[defName="BrrtGunFlam"]/verbs</xpath>
+								<value>
+										<li>
+											<verbClass>Verb_Shoot</verbClass>
+											<hasStandardCommand>false</hasStandardCommand>
+											<label>point-defense</label>
+											<defaultProjectile>BrrtBullet</defaultProjectile>
+											<warmupTime>0</warmupTime>
+											<range>50.9</range>
+											<burstShotCount>10</burstShotCount>
+											<ticksBetweenBurstShots>0</ticksBetweenBurstShots>
+											<soundCast>gau-8</soundCast>
+											<soundCastTail>GunTail_Medium</soundCastTail>
+											<muzzleFlashScale>11</muzzleFlashScale>
+											<consumeFuelPerShot>1</consumeFuelPerShot>
+											<defaultCooldownTime>0.2</defaultCooldownTime>
+											<isPrimary>false</isPrimary>
+										</li>						
+								</value>
+							</li>												
+					</operations>
+				</Operation>
+			</caseTrue>
+			</Operation>
+				
+				
+		
+    </apply>
+	</nomatch>
+	</Operation>
+</Patch>

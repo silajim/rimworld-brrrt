@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+<Operation Class="XmlExtensions.UseSetting">
+    <modId>HolBrrt</modId>
+    <key>BrrtPower</key>
+    <defaultValue>3000</defaultValue>
+    <apply>
+
+				<Operation Class="PatchOperationSequence">
+					<operations>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/ThingDef[defName = "BrrtTurret"]/comps/li[@Class = "CompProperties_Power"]/basePowerConsumption</xpath>
+							<value>
+								<basePowerConsumption>{BrrtPower}</basePowerConsumption>
+							</value>
+						</li>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/ThingDef[defName = "BrrtTurretFlam"]/comps/li[@Class = "CompProperties_Power"]/basePowerConsumption</xpath>
+							<value>
+								<basePowerConsumption>{BrrtPower}</basePowerConsumption>
+							</value>
+						</li>
+					</operations>
+		</Operation>
+		
+    </apply>
+</Operation>
+</Patch>

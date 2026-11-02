@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+<Operation Class="PatchOperationFindMod">
+    <mods>
+        <li>Combat Extended</li>
+    </mods>
+
+<nomatch Class="XmlExtensions.UseSetting">
+    <modId>HolBrrt</modId>
+    <key>BrrtRefuel</key>
+    <defaultValue>0</defaultValue>
+    <apply>
+	
+		<Operation Class="XmlExtensions.IfStatement">
+			<condition Class="XmlExtensions.Boolean.Comparison">
+				<value1>{BrrtRefuel}</value1>
+				<value2>0</value2>
+				<nonNumeric>true</nonNumeric>
+				<relation>eq</relation>
+			</condition>
+			<caseTrue>
+				<Operation Class="PatchOperationSequence">
+					<operations>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/ThingDef[defName = "BrrtTurret"]/comps/li[@Class = "CompProperties_Refuelable"]/fuelFilter/thingDefs</xpath>
+							<value>
+								<thingDefs><li>Steel</li></thingDefs>
+							</value>
+						</li>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/ThingDef[defName = "BrrtTurretFlam"]/comps/li[@Class = "CompProperties_Refuelable"]/fuelFilter/thingDefs</xpath>
+							<value>
+								<thingDefs><li>Steel</li></thingDefs>
+							</value>
+						</li>
+					</operations>
+				</Operation>
+			</caseTrue>
+		</Operation>
+		<Operation Class="XmlExtensions.IfStatement">
+			<condition Class="XmlExtensions.Boolean.Comparison">
+				<value1>{BrrtRefuel}</value1>
+				<value2>1</value2>
+				<nonNumeric>true</nonNumeric>
+				<relation>eq</relation>
+			</condition>
+			<caseTrue>
+				<Operation Class="PatchOperationSequence">
+					<operations>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/ThingDef[defName = "BrrtTurret"]/comps/li[@Class = "CompProperties_Refuelable"]/fuelFilter/thingDefs</xpath>
+							<value>
+								<thingDefs><li>Uranium</li></thingDefs>
+							</value>
+						</li>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/ThingDef[defName = "BrrtTurretFlam"]/comps/li[@Class = "CompProperties_Refuelable"]/fuelFilter/thingDefs</xpath>
+							<value>
+								<thingDefs><li>Uranium</li></thingDefs>
+							</value>
+						</li>
+					</operations>
+				</Operation>
+			</caseTrue>
+		</Operation>
+		<Operation Class="XmlExtensions.IfStatement">
+			<condition Class="XmlExtensions.Boolean.Comparison">
+				<value1>{BrrtRefuel}</value1>
+				<value2>2</value2>
+				<nonNumeric>true</nonNumeric>
+				<relation>eq</relation>
+			</condition>
+			<caseTrue>
+				<Operation Class="PatchOperationSequence">
+					<operations>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/ThingDef[defName = "BrrtTurret"]/comps/li[@Class = "CompProperties_Refuelable"]/fuelFilter/thingDefs</xpath>
+							<value>
+								<thingDefs><li>Plasteel</li></thingDefs>
+							</value>
+						</li>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/ThingDef[defName = "BrrtTurretFlam"]/comps/li[@Class = "CompProperties_Refuelable"]/fuelFilter/thingDefs</xpath>
+							<value>
+								<thingDefs><li>Plasteel</li></thingDefs>
+							</value>
+						</li>
+					</operations>
+				</Operation>
+				
+				
+			</caseTrue>
+		</Operation>
+    </apply>
+	</nomatch>
+</Operation>
+</Patch>
