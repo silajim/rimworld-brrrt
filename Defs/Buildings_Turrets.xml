@@ -127,7 +127,7 @@
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>BrrtBullet</defaultProjectile>
         <range>50</range>
-        <ticksBetweenBurstShots>0.5</ticksBetweenBurstShots>
+        <ticksBetweenBurstShots>0</ticksBetweenBurstShots>
         <burstShotCount>50</burstShotCount>
         <soundCast>gau-8</soundCast>
         <soundCastTail>GunTail_Medium</soundCastTail>
